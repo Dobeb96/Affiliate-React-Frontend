@@ -5,31 +5,33 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import "./App.scss"
 
-// This site has 3 pages, all of which are rendered
-// dynamically in the browser (not server rendered).
-//
-// Although the page does not ever refresh, notice how
-// React Router keeps the URL up to date as you navigate
-// through the site. This preserves the browser history,
-// making sure things like the back button and bookmarks
-// work properly.
-
-export default function BasicExample() {
+export default function App() {
   return (
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-        </ul>
+        <nav class="nav">
+          <Link to="/" className="logo">domicillo</Link>
+          <ul class="nav-links">
+            <li>
+              <Link to="/lampy-sufitowe">Lampy sufitowe</Link>
+            </li>
+            <li>
+              <Link to="/lampy-wiszace">Lampy wiszące</Link>
+            </li>
+            <li>
+              <Link to="/klinkiety">Klinkiety</Link>
+            </li>
+            <li>
+              <Link to="/lampy-stojace">Lampy stojące</Link>
+            </li>
+            <li>
+              <Link to="/oswietlenie-zewnetrzne">Oświetlenie zewnętrzne</Link>
+            </li>
+          </ul>
+          <div>{/* Empty div for easier flexbox positioning */}</div>
+        </nav>
 
         <hr />
 
@@ -44,41 +46,16 @@ export default function BasicExample() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
         </Switch>
       </div>
     </Router>
   );
 }
 
-// You can think of these components as "pages"
-// in your app.
-
 function Home() {
   return (
     <div>
       <h2>Home</h2>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
     </div>
   );
 }
