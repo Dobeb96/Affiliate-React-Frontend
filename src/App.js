@@ -5,35 +5,49 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { Grid } from "@material-ui/core"
 import "./App.scss"
+import IosArrowDown from 'react-ionicons/lib/IosArrowDown'
+import IosContactOutline from 'react-ionicons/lib/IosContactOutline'
+import MdSearch from 'react-ionicons/lib/MdSearch'
+import MdHeartOutline from 'react-ionicons/lib/MdHeartOutline'
 
 export default function App() {
   return (
     <Router>
       <div>
-        <nav class="nav">
-          <Link to="/" className="logo">domicillo</Link>
-          <ul class="nav-links">
-            <li>
-              <Link to="/lampy-sufitowe">Lampy sufitowe</Link>
-            </li>
-            <li>
-              <Link to="/lampy-wiszace">Lampy wiszące</Link>
-            </li>
-            <li>
-              <Link to="/klinkiety">Klinkiety</Link>
-            </li>
-            <li>
-              <Link to="/lampy-stojace">Lampy stojące</Link>
-            </li>
-            <li>
-              <Link to="/oswietlenie-zewnetrzne">Oświetlenie zewnętrzne</Link>
-            </li>
-          </ul>
-          <div>{/* Empty div for easier flexbox positioning */}</div>
+        <nav className="nav">
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="center"
+          >
+            <div></div>
+            <Grid
+              container
+              direction="row"
+              justify="space-around"
+              alignItems="center"
+              lg={7}
+            >
+              <Link className="btn-primary" to="/">Strona główna</Link>
+              <Link className="btn-primary" to="/">Najpopularniejsze</Link>
+              <Link className="btn-primary" to="/">Kategorie</Link>
+              <div className="relative">
+                <input className="search main-search" type="text" placeholder="Szukaj.." name="main-search"></input>
+                <MdSearch className="search-icon" color="#888" fontSize="1.8em" />
+              </div>
+              <Link className="btn-primary btn-round flex-middle" to="/">
+                <MdHeartOutline color="white" fontSize="1.5em" />
+              </Link>
+            </Grid>
+            <div className="btn flex-middle">
+                <IosContactOutline color="black" fontSize="3em" />
+                <IosArrowDown color="black" fontSize="1.5em" />
+              </div>
+          </Grid>
         </nav>
-
-        <hr />
 
         {/*
           A <Switch> looks through all its children <Route>

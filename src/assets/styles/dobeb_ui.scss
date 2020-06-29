@@ -1,12 +1,7 @@
+@import "./dobeb_ui_variables.scss";
+
 // My mini UI library
 // Author: Dobeb96
-
-$font-family: Anton;
-$background-primary: #f3f3f3;
-$button-text-primary: white;
-$button-primary: #fa6266;
-$button-radius: 100px;
-$button-size: 3em;
 
 @font-face {
     font-family: Anton;
@@ -18,9 +13,13 @@ $button-size: 3em;
 }
 
 @mixin shadow {
-    // -webkit-box-shadow: 0px 10px 50px -30px rgba(0,0,0,0.75);
-    // -moz-box-shadow: 0px 10px 50px -30px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 8px 20px 30px -30px rgba(0,0,0,0.75);
+    -moz-box-shadow: 8px 20px 30px -30px rgba(0,0,0,0.75);
     box-shadow: 8px 20px 30px -30px rgba(0,0,0,0.75);
+}
+
+@mixin margin-small {
+    margin: .3em;
 }
 
 @mixin nostyle-hyperlinks {
@@ -33,17 +32,17 @@ $button-size: 3em;
 
 .btn {
     @include font-primary;
+    @include margin-small;
     @include nostyle-hyperlinks;
-    // background-color: darken($background-primary, 30%);
     border-radius: $button-radius;
     height: $button-size;
     min-width: $button-size;
     line-height: $button-size;
     color: black;
     text-align: center;
-    padding: 0 1.2em;
+    padding: 0 1.4em;
     text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
 .btn-primary {
@@ -51,9 +50,31 @@ $button-size: 3em;
     @include shadow;
     color: $button-text-primary;
     background-color: $button-primary;
+    border: 4px solid darken($button-primary, 1%)
+}
+
+.btn-secondary {
+    @extend .btn;
+    @include shadow;
+    color: $button-text-primary;
+    background-color: darken($background-primary, 10%);
 }
 
 .btn-round {
     @extend .btn;
+    padding: 0;
+    vertical-align: middle;
     max-width: $button-size;
+}
+
+.search {
+    @extend .btn;
+    flex-grow: 2;
+    border: none;
+}
+
+.flex-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
