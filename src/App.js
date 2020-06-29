@@ -23,13 +23,14 @@ export default function App() {
             justify="space-between"
             alignItems="center"
           >
-            <div></div>
+            <div className="m-right">{/* Empty div for easier flex positioning */}</div>
             <Grid
               container
               direction="row"
               justify="space-around"
               alignItems="center"
-              lg={7}
+              item={true}
+              lg={8}
             >
               <Link className="btn-primary" to="/">Strona główna</Link>
               <Link className="btn-primary" to="/">Najpopularniejsze</Link>

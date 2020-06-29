@@ -1,3 +1,5 @@
+@import "./assets/styles/dobeb_ui_variables.scss";
+
 $search-color: #888;
 
 .relative {
@@ -18,4 +20,9 @@ $search-color: #888;
     top: 0em;
     left: 0em;
     padding: 2em;
+    cursor: pointer;
+}
+
+.m-right {
+    margin-right: 2 * $button-size;
 }
