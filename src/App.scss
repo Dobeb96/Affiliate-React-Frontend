@@ -23,6 +23,10 @@ $search-color: #888;
     cursor: pointer;
 }
 
+.m-left {
+    margin-left: 2 * $button-size;
+}
+
 .m-right {
     margin-right: 2 * $button-size;
 }

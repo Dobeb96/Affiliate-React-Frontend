@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import ItemGallery from "./components/ItemGallery/ItemGallery.js"
 import { Grid } from "@material-ui/core"
 import "./App.scss"
 import IosArrowDown from 'react-ionicons/lib/IosArrowDown'
@@ -58,19 +59,11 @@ export default function App() {
           of them to render at a time
         */}
         <Switch>
-          <Route exact path="/">
-            <Home />
+          <Route exact path="*">
+            <ItemGallery />
           </Route>
         </Switch>
       </div>
     </Router>
-  );
-}
-
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
   );
 }
