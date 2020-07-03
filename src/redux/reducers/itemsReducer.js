@@ -1,6 +1,6 @@
 const itemsReducer = (state = 0, action) => {
     switch(action.type) {
-        case 'INCREMENT':
+        case 'FETCH':
             return state + 1;
         default:
             return state;
