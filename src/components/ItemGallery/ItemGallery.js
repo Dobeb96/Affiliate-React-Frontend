@@ -5,13 +5,18 @@ import { connect } from "react-redux";
 import { fetchItems } from "../../redux/actions";
 
 class ItemGallery extends React.Component {
+    componentDidMount() {
+        this.props.fetchItems()
+    }
+
     render() {
-        return (
-            <div className="spinner-loading">
-                <h1 onClick={() => this.props.fetchItems()}>{this.props.items}</h1>
+        if (Object.keys(this.props.items).length === 0) {
+            return <div className="spinner-loading">
                 <BounceLoader color="#fa6266" />
             </div>
-        )
+        } else {
+            return <h1>TODO: Render items here</h1>
+        }
     }
 }
 
