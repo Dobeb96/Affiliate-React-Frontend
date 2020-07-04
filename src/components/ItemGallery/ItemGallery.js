@@ -3,6 +3,7 @@ import "./ItemGallery.scss";
 import BounceLoader from "react-spinners/BounceLoader";
 import { connect } from "react-redux";
 import { fetchItems } from "../../redux/actions";
+import Item from "../Item/Item";
 
 class ItemGallery extends React.Component {
     componentDidMount() {
@@ -15,7 +16,9 @@ class ItemGallery extends React.Component {
                 <BounceLoader color="#fa6266" />
             </div>
         } else {
-            return <h1>{this.props.items.items}, {this.props.items.error}, {this.props.items.isLoading}</h1>
+            return this.props.items.items.data.map((e, i) =>
+                <Item key={i} item={e} />
+            )
         }
     }
 }

@@ -27,10 +27,7 @@ export function fetchItems() {
         // TODO: Error handling
         axios.get(`${process.env.REACT_APP_API_ENDPOINT}/items`)
         .then(
-            response => response.json()
-        )
-        .then(json =>
-            dispatch(requestItemsSuccess(json))
+            response => dispatch(requestItemsSuccess(response))
         )
     }
 }
