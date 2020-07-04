@@ -1,4 +1,4 @@
-import fetch from 'cross-fetch';
+import axios from 'axios';
 
 export const requestStarted = () => {
     return {
@@ -13,18 +13,24 @@ export const requestItemsSuccess = (json) => {
     }
 }
 
-export const requestFailed = () => {
+export const requestFailed = (error) => {
     return {
-        type: 'REQUEST_FAILED'
+        type: 'REQUEST_FAILED',
+        error: error
     }
 }
 
 export function fetchItems() {
     return async function (dispatch) {
-        dispatch(requestStarted)
+        dispatch(requestStarted())
 
-        const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/items`);
-        const json = await response.json();
-        return dispatch(requestItemsSuccess(json));
+        // TODO: Error handling
+        axios.get(`${process.env.REACT_APP_API_ENDPOINT}/items`)
+        .then(
+            response => response.json()
+        )
+        .then(json =>
+            dispatch(requestItemsSuccess(json))
+        )
     }
 }

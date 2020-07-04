@@ -1,6 +1,7 @@
 const initialState = {
     isLoading: false,
     items: null,
+    error: null,
 }
 
 const itemsReducer = (state = false, action) => {
@@ -10,7 +11,7 @@ const itemsReducer = (state = false, action) => {
         case 'REQUEST_ITEMS_SUCCESS':
             return Object.assign({}, state, { isLoading: false })
         case 'REQUEST_FAILED':
-            return Object.assign({}, state, { isLoading: false })
+            return Object.assign({}, state, { isLoading: false, items: 'ERROR', error: 'ERROR' })
         default:
             return state;
     }

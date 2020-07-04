@@ -10,12 +10,12 @@ class ItemGallery extends React.Component {
     }
 
     render() {
-        if (this.props.items.loading === true) {
+        if (this.props.items.isLoading === true) {
             return <div className="spinner-loading">
                 <BounceLoader color="#fa6266" />
             </div>
         } else {
-            return <h1>{this.props.items.loading}</h1>
+            return <h1>{this.props.items.items}, {this.props.items.error}, {this.props.items.isLoading}</h1>
         }
     }
 }
