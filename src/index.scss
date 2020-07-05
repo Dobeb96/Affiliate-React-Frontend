@@ -1,3 +1,8 @@
 @import "./assets/styles/reset.scss";
 @import "./assets/styles/global.scss";
 @import "./assets/styles/dobeb_ui.scss";
+
+body {
+    margin: 0 auto;
+    max-width: 1920px;
+}

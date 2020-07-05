@@ -16,9 +16,11 @@ class ItemGallery extends React.Component {
                 <BounceLoader color="#fa6266" />
             </div>
         } else {
-            return this.props.items.items.data.map((e, i) =>
-                <Item key={i} item={e} />
-            )
+            return <div className="item-gallery-layout">
+                {this.props.items.items.data.map((e, i) =>
+                    <Item key={i} item={e} />
+                )}
+            </div>
         }
     }
 }

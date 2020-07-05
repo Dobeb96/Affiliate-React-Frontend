@@ -1,5 +1,11 @@
 @import "../../assets/styles/dobeb_ui_variables.scss";
 
+.item-gallery-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .spinner-loading {
     width: $button-size;
     margin: $button-size auto;

@@ -67,8 +67,25 @@
     max-width: $button-size;
 }
 
+.card {
+    @include shadow;
+    @include nostyle-hyperlinks;
+    border-radius: $card-border;
+    background-color: white;
+    min-width: 220px;
+    min-height: 220px;
+    width: 24%;
+    margin: .4em;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    border-radius: $card-border;
+}
+
 input:focus {
-    outline:0;
+    outline: 0;
 }
 
 .search {
