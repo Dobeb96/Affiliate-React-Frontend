@@ -1,8 +1,15 @@
 import React from "react";
+import "./Item.scss"
 
 class Item extends React.Component {
     render() {
-        return <h1>OK</h1>
+        return <div className="card">
+            <img 
+                className="card-image" 
+                src={this.props.item.url} 
+                alt={this.props.item.name}
+            />
+        </div>
     }
 }
 
