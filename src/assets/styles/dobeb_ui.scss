@@ -67,6 +67,13 @@
     max-width: $button-size;
 }
 
+.btn-round-small {
+    @extend .btn-round;
+    height: $button-size / 2;
+    min-width: $button-size / 2;
+    width: $button-size / 2;
+}
+
 .card {
     @include shadow;
     @include nostyle-hyperlinks;
@@ -76,6 +83,8 @@
     min-height: 220px;
     width: 24%;
     margin: .4em;
+    z-index: 0;
+    position: relative;
 }
 
 .card-image {
