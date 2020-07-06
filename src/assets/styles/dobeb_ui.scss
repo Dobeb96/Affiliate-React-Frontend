@@ -110,6 +110,10 @@
     cursor: pointer;
 }
 
+.card:hover img {
+    filter: brightness(95%);
+}
+
 .card-image {
     width: 100%;
     height: 100%;
