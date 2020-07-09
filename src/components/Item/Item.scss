@@ -2,26 +2,14 @@
 
 .item-favourite {
     position: absolute;
-    bottom: 0;
+    top: 0;
     right: 0;
-}
-
-.item-vendor-url {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-.item-favourite-icon {
-    margin: .1em 0.3em .1em 0;
 }
 
 .item-header {
     font-size: $font-size-mid;
     position: absolute;
-    bottom: 4.2em;
+    bottom: 0;
     left: 0;
     z-index: 1;
     width: 100%;
@@ -43,9 +31,12 @@
 }
 
 .item-name {
-    font-size: $font-size-bigger;
+    font-size: $font-size-mid;
     text-transform: uppercase;
-    text-shadow: 1px 2px 2px rgb(25,25,25);
+    text-shadow: 1px 2px 2px rgb(15,15,15);
+    border-bottom: 4px dotted $primary;
+    padding: 0 .8em 0 .1em;
+    display: inline;
 }
 
 .item-price {
