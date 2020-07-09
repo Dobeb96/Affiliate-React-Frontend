@@ -20,6 +20,10 @@ class Item extends React.Component {
                 </div>
                 <div>vendor.url</div>
             </div>
+            <div className="item-header">
+                <h3 className="item-name">Item name</h3>
+                <div className="item-price">549,-</div>
+            </div>
         </div>
     }
 }
