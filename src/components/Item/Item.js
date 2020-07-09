@@ -11,18 +11,20 @@ class Item extends React.Component {
                 src={this.props.item.url} 
                 alt={this.props.item.name}
             />
-            <div className="btn-primary btn-round-small btn-hover-darken flex-middle item-favourite" to="/">
-                <MdHeartOutline color="white" fontSize="1.5em" />
-            </div>
-            <div className="btn-primary-small btn-hover-darken item-vendor-url" to="/">
-                <div className="item-favourite-icon">
-                    <MdTrendingUp color="white" fontSize="1.5em" />
+            <div className="card-content-hover">
+                <div className="btn-primary btn-round-small btn-hover-darken flex-middle item-favourite" to="/">
+                    <MdHeartOutline color="white" fontSize="1.5em" />
                 </div>
-                <div>vendor.url</div>
-            </div>
-            <div className="item-header">
-                <h3 className="item-name">Item name</h3>
-                <div className="item-price">549,-</div>
+                <div className="btn-primary-small btn-hover-darken item-vendor-url" to="/">
+                    <div className="item-favourite-icon">
+                        <MdTrendingUp color="white" fontSize="1.5em" />
+                    </div>
+                    <div>vendor.url</div>
+                </div>
+                <div className="item-header">
+                    <h3 className="item-name">Item name</h3>
+                    <div className="item-price">549,-</div>
+                </div>
             </div>
         </div>
     }

@@ -19,14 +19,36 @@
 }
 
 .item-header {
+    font-size: $font-size-mid;
     position: absolute;
     bottom: 4.2em;
     left: 0;
     z-index: 1;
-    background-color: white;
     width: 100%;
+    opacity: 0;
+    color: $button-text-primary;
+    text-shadow: 3px 3px 2px $secondary;
+    -webkit-font-smoothing: antialiased;
+    transition: all $transition-duration ease-in-out;
 }
 
+.card:hover .item-header {
+    opacity: 1;
+}
+
+
 .item-name, .item-price {
+    margin: .2em;
     font-family: $font-family;
+}
+
+.item-name {
+    font-size: $font-size-bigger;
+    text-transform: uppercase;
+    text-shadow: 1px 2px 2px rgb(25,25,25);
+}
+
+.item-price {
+    font-size: $font-size-big;
+    text-align: right;
 }

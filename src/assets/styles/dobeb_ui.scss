@@ -42,7 +42,7 @@
     text-align: center;
     padding: 0 1.4em;
     text-transform: uppercase;
-    font-size: 1.4em;
+    font-size: $font-size-mid;
     cursor: pointer;
 }
 
@@ -108,10 +108,16 @@
     z-index: 0;
     position: relative;
     cursor: pointer;
+    overflow: hidden;
+}
+
+.card img {
+    transition: all $transition-duration ease-in-out;
 }
 
 .card:hover img {
-    filter: brightness(95%);
+    filter: brightness(1.05);
+    transform: scale(1.05);
 }
 
 .card-image {
@@ -119,6 +125,16 @@
     height: 100%;
     border-radius: $card-border;
 }
+
+.card-content-hover {
+    opacity: 0;
+    transition: opacity $transition-duration ease-in-out;
+}
+
+.card:hover .card-content-hover {
+    opacity: 1;
+}
+
 
 input:focus {
     outline: 0;

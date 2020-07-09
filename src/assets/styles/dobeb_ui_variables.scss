@@ -1,8 +1,15 @@
+$primary: #fe346e;
+$secondary: #381460;
 $font-family: Anton;
+$font-size-big: 2em;
+$font-size-bigger: 1.6em;
+$font-size-mid: 1.4em;
+$font-size-small: 1em;
 $background-primary: #f3f3f3;
 $button-text-primary: white;
-$button-primary: #fa6266;
+$button-primary: $primary;
 $button-secondary: #f3f3f3;
 $button-radius: 100px;
 $button-size: 3.6em;
 $card-border: 20px;
+$transition-duration: .1s;
