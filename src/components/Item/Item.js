@@ -7,7 +7,7 @@ class Item extends React.Component {
         return <div className="card">
             <img 
                 className="card-image" 
-                src={this.props.item.url} 
+                src={this.props.item.photos[0].url}
                 alt={this.props.item.name}
             />
             <div className="card-content-hover">
@@ -15,8 +15,8 @@ class Item extends React.Component {
                     <MdHeartOutline color="white" fontSize="1.5em" />
                 </div>
                 <div className="item-header">
-                    <h3 className="item-name">Item name</h3>
-                    <div className="item-price">549,-</div>
+                    <h3 className="item-name">{this.props.item.name}</h3>
+                    <div className="item-price">{this.props.item.price_current},-</div>
                 </div>
             </div>
         </div>

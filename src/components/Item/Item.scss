@@ -15,7 +15,7 @@
     width: 100%;
     opacity: 0;
     color: $button-text-primary;
-    text-shadow: 3px 3px 2px $secondary;
+    text-shadow: 2px 3px 2px black;
     -webkit-font-smoothing: antialiased;
     transition: all $transition-duration ease-in-out;
 }
@@ -24,7 +24,6 @@
     opacity: 1;
 }
 
-
 .item-name, .item-price {
     margin: .2em;
     font-family: $font-family;
@@ -32,11 +31,8 @@
 
 .item-name {
     font-size: $font-size-mid;
-    text-transform: uppercase;
-    text-shadow: 1px 2px 2px rgb(15,15,15);
-    border-bottom: 4px dotted $primary;
+    text-shadow: 2px 3px 2px black;
     padding: 0 .8em 0 .1em;
-    display: inline;
 }
 
 .item-price {
