@@ -28,14 +28,15 @@ export default function App() {
             <Grid
               container
               direction="row"
-              justify="space-around"
+              justify="center"
               alignItems="center"
               item={true}
-              lg={8}
+              lg={10}
             >
               <Link className="btn-primary" to="/">Strona główna</Link>
-              <Link className="btn-primary" to="/">Najpopularniejsze</Link>
+              <Link className="btn-primary" to="/">Popularne</Link>
               <Link className="btn-primary" to="/">Kategorie</Link>
+              <Link className="btn-primary" to="/">Ostatnio przeglądane</Link>
               <div className="relative">
                 <input className="search main-search" type="text" placeholder="Szukaj.." name="main-search"></input>
                 <MdSearch className="search-icon" color="#888" fontSize="1.8em" />
