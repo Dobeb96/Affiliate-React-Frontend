@@ -13,11 +13,31 @@ import IosContactOutline from 'react-ionicons/lib/IosContactOutline'
 import MdSearch from 'react-ionicons/lib/MdSearch'
 import MdHeartOutline from 'react-ionicons/lib/MdHeartOutline'
 
-export default function App() {
-  return (
-    <Router>
-      <div>
-        <nav className="nav">
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      scrolledTopClass: '',
+    }
+
+    this.handleScroll = this.handleScroll.bind(this)
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll)
+  }
+
+  handleScroll() {
+    let scrolledTopClass = window.pageYOffset === 0 ? '' : 'nav-scrolled'
+    this.setState({
+      scrolledTopClass: scrolledTopClass
+    })
+  }
+
+  render() {
+    return <Router>
+      <div className="content">
+        <nav id="nav" className={"nav " + this.state.scrolledTopClass}>
           <Grid
             container
             direction="row"
@@ -66,5 +86,7 @@ export default function App() {
         </Switch>
       </div>
     </Router>
-  );
+  }
 }
+
+export default App;

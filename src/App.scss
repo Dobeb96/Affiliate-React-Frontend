@@ -1,6 +1,26 @@
 @import "./assets/styles/dobeb_ui_variables.scss";
 
 $search-color: #888;
+$nav-height: $button-size * 1.8;
+
+.content {
+    margin-top: $nav-height;
+}
+
+.nav {
+    background-color: $background-primary;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: $nav-height;
+    z-index: 1;
+    border-bottom: 4px solid $background-primary;
+    transition: $transition-duration border ease-in-out;
+}
+
+.nav-scrolled {
+    border-bottom: 4px solid darken($background-primary, 5%);
+}
 
 .relative {
     position: relative;
