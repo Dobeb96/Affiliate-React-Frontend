@@ -3,6 +3,11 @@ import "./Item.scss"
 import MdHeartOutline from 'react-ionicons/lib/MdHeartOutline'
 
 class Item extends React.Component {
+    priceFormat(price_raw) {
+        let price = parseFloat(price_raw)
+        return price.toFixed(0)
+    }
+
     render() {
         return <div className="card">
             <div className="card-image-wrapper">
@@ -19,7 +24,9 @@ class Item extends React.Component {
             </div>
             <div className="item-header">
                 <h3 className="item-name">{this.props.item.name}</h3>
-                <div className="item-price">{this.props.item.price_current}zł</div>
+                <div className="item-price">
+                    {this.priceFormat(this.props.item.price_current)} zł
+                </div>
             </div>
         </div>
     }
