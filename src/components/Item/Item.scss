@@ -8,34 +8,18 @@
 
 .item-header {
     font-size: $font-size-mid;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    opacity: 0;
-    color: $button-text-primary;
-    text-shadow: 2px 3px 2px black;
-    -webkit-font-smoothing: antialiased;
-    transition: all $transition-duration ease-in-out;
-}
-
-.card:hover .item-header {
-    opacity: 1;
-}
-
-.item-name, .item-price {
     margin: .2em;
-    font-family: $font-family;
 }
 
 .item-name {
-    font-size: $font-size-mid;
-    text-shadow: 2px 3px 2px black;
-    padding: 0 .8em 0 .1em;
+    font-size: $font-size-tiny;
+    font-family: $font-secondary;
+    height: 3em;
 }
 
 .item-price {
-    font-size: $font-size-big;
-    text-align: right;
+    margin-top: .4em;
+    text-align: justify;
+    font-size: $font-size-mid;
+    font-family: $font-primary;
 }
