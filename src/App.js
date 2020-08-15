@@ -54,7 +54,7 @@ class App extends React.Component {
               lg={10}
             >
               <Link className="btn-primary" to="/">Strona główna</Link>
-              <Link className="btn-primary" to="/">Popularne</Link>
+              <Link className="btn-primary" to="/popularne">Popularne</Link>
               <Link className="btn-primary" to="/">Kategorie</Link>
               <Link className="btn-primary" to="/">Ostatnio przeglądane</Link>
               <div className="relative">
@@ -80,8 +80,11 @@ class App extends React.Component {
           of them to render at a time
         */}
         <Switch>
+          <Route exact path="/popularne">
+            <ItemGallery key="popular" filter="popular" />
+          </Route>
           <Route exact path="*">
-            <ItemGallery />
+          <ItemGallery key="home" />
           </Route>
         </Switch>
       </div>

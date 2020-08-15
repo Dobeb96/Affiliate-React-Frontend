@@ -20,12 +20,16 @@ export const requestFailed = (error) => {
     }
 }
 
-export function fetchItems() {
+export function fetchItems(options) {
     return async function (dispatch) {
         dispatch(requestStarted())
 
         // TODO: Error handling
-        axios.get(`${process.env.REACT_APP_API_ENDPOINT}/items`)
+        let api_endpoint = `${process.env.REACT_APP_API_ENDPOINT}/items`
+        if (options.filter) {
+            api_endpoint += '?filter=' + options.filter
+        }
+        axios.get(api_endpoint)
         .then(
             response => dispatch(requestItemsSuccess(response))
         )

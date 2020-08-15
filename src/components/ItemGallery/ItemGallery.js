@@ -7,7 +7,7 @@ import Item from "../Item/Item";
 
 class ItemGallery extends React.Component {
     componentDidMount() {
-        this.props.fetchItems();
+        this.props.fetchItems({ filter: this.props.filter });
     }
 
     render() {
