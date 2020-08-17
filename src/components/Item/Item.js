@@ -10,22 +10,24 @@ class Item extends React.Component {
 
     render() {
         return <div className="card">
-            <div className="card-image-wrapper">
-                <img
-                    className="card-image"
-                    src={this.props.item.photos[0].url}
-                    alt={this.props.item.name}
-                />
-            </div>
+            <a href={this.props.item.url} target="_blank">
+                <div className="card-image-wrapper">
+                    <img
+                        className="card-image"
+                        src={this.props.item.photos[0].url}
+                        alt={this.props.item.name}
+                    />
+                </div>
+                <div className="item-header">
+                    <h3 className="item-name">{this.props.item.name}</h3>
+                    <div className="item-price">
+                        {this.priceFormat(this.props.item.price_current)} zł
+                    </div>
+                </div>
+            </a>
             <div className="card-content-hover">
                 <div className="btn-primary btn-round-small btn-hover-darken flex-middle item-favourite" to="/">
                     <MdHeartOutline color="white" fontSize="1.5em" />
-                </div>
-            </div>
-            <div className="item-header">
-                <h3 className="item-name">{this.props.item.name}</h3>
-                <div className="item-price">
-                    {this.priceFormat(this.props.item.price_current)} zł
                 </div>
             </div>
         </div>

@@ -32,6 +32,7 @@
 }
 
 @mixin nostyle-hyperlinks {
+    color: inherit;
     text-decoration: none;
 }
 
@@ -112,7 +113,6 @@
 
 .card {
     @include shadow;
-    @include nostyle-hyperlinks;
     border-radius: $card-border;
     background-color: white;
     min-width: 220px;
@@ -122,9 +122,14 @@
     z-index: 0;
     position: relative;
     cursor: pointer;
+    user-select: none;
     overflow: hidden;
     box-sizing: border-box;
     animation: show-up 1s ease-in-out;
+}
+
+.card a {
+    @include nostyle-hyperlinks;
 }
 
 .card img {
