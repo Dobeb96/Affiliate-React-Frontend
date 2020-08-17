@@ -81,7 +81,7 @@ class App extends React.Component {
         */}
         <Switch>
           <Route exact path="/popularne">
-            <ItemGallery key="popular" filter="popular" />
+            <ItemGallery key="popular" category="popular" />
           </Route>
           <Route exact path="*">
           <ItemGallery key="home" />

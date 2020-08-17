@@ -26,8 +26,8 @@ export function fetchItems(options) {
 
         // TODO: Error handling
         let api_endpoint = `${process.env.REACT_APP_API_ENDPOINT}/items`
-        if (options.filter) {
-            api_endpoint += '?filter=' + options.filter
+        if (options.category) {
+            api_endpoint += '?category=' + options.category
         }
         axios.get(api_endpoint)
         .then(
