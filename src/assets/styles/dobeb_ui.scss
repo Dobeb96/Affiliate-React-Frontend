@@ -35,6 +35,11 @@
     text-decoration: none;
 }
 
+@keyframes show-up {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 .bg-primary {
     background-color: $background-primary;
 }
@@ -119,6 +124,7 @@
     cursor: pointer;
     overflow: hidden;
     box-sizing: border-box;
+    animation: show-up 1s ease-in-out;
 }
 
 .card img {
