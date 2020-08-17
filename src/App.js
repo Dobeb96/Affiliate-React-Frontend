@@ -35,13 +35,13 @@ class App extends React.Component {
             >
               <Link className="btn-primary" to="/">Strona główna</Link>
               <Link className="btn-primary" to="/popularne">Popularne</Link>
-              <Link className="btn-primary" to="/">Kategorie</Link>
-              <Link className="btn-primary" to="/">Ostatnio przeglądane</Link>
+              <Link className="btn-primary" to="/kategorie">Kategorie</Link>
+              <Link className="btn-primary" to="/ostatnio-przegladane">Ostatnio przeglądane</Link>
               <div className="relative">
                 <input className="search main-search" type="text" placeholder="Szukaj.." name="main-search"></input>
                 <MdSearch className="search-icon" color="#888" fontSize="1.8em" />
               </div>
-              <Link className="btn-primary btn-round flex-middle" to="/">
+              <Link className="btn-primary btn-round flex-middle" to="/ulubione">
                 <MdHeartOutline color="white" fontSize="1.5em" />
               </Link>
             </Grid>
@@ -63,8 +63,17 @@ class App extends React.Component {
           <Route exact path="/popularne">
             <ItemGallery key="popular" category="popular" />
           </Route>
+          <Route exact path="/kategorie">
+            <ItemGallery key="categories" category="categories" />
+          </Route>
+          <Route exact path="/ostatnio-przegladane">
+            <ItemGallery key="last-viewed" category="last-viewed" />
+          </Route>
+          <Route exact path="/ulubione">
+            <ItemGallery key="favourites" category="favourites" />
+          </Route>
           <Route exact path="*">
-          <ItemGallery key="home" />
+            <ItemGallery key="home" />
           </Route>
         </Switch>
       </div>
