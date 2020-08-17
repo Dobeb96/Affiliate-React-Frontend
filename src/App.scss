@@ -14,12 +14,6 @@ $nav-height: $button-size * 1.8;
     width: 100%;
     height: $nav-height;
     z-index: 1;
-    border-bottom: 4px solid $background-primary;
-    transition: $transition-duration border ease-in-out;
-}
-
-.nav-scrolled {
-    border-bottom: 4px solid darken($background-primary, 5%);
 }
 
 .relative {

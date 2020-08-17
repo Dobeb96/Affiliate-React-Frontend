@@ -14,30 +14,10 @@ import MdSearch from 'react-ionicons/lib/MdSearch'
 import MdHeartOutline from 'react-ionicons/lib/MdHeartOutline'
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      scrolledTopClass: '',
-    }
-
-    this.handleScroll = this.handleScroll.bind(this)
-  }
-
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll)
-  }
-
-  handleScroll() {
-    let scrolledTopClass = window.pageYOffset === 0 ? '' : 'nav-scrolled'
-    this.setState({
-      scrolledTopClass: scrolledTopClass
-    })
-  }
-
   render() {
     return <Router>
       <div className="content">
-        <nav id="nav" className={"nav " + this.state.scrolledTopClass}>
+        <nav id="nav" className="nav">
           <Grid
             container
             direction="row"
