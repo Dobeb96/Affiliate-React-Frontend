@@ -1,7 +1,11 @@
-# See the project in the browser:
+# See deployed project in the browser:
 
 https://dobeb96.github.io/Affiliate-React-Frontend/
 
-# How to deploy:
+# See Rails backend for this project:
+
+https://github.com/Dobeb96/Affiliate-Ruby-Backend
+
+# How to make new deployments from the console:
 
 `npm run deploy`
