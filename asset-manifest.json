@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/affiliate-react-frontend/static/css/main.279788f6.chunk.css",
+    "main.js": "/affiliate-react-frontend/static/js/main.adec27bc.chunk.js",
+    "main.js.map": "/affiliate-react-frontend/static/js/main.adec27bc.chunk.js.map",
+    "runtime-main.js": "/affiliate-react-frontend/static/js/runtime-main.7796d27f.js",
+    "runtime-main.js.map": "/affiliate-react-frontend/static/js/runtime-main.7796d27f.js.map",
+    "static/js/2.db82d8fd.chunk.js": "/affiliate-react-frontend/static/js/2.db82d8fd.chunk.js",
+    "static/js/2.db82d8fd.chunk.js.map": "/affiliate-react-frontend/static/js/2.db82d8fd.chunk.js.map",
+    "index.html": "/affiliate-react-frontend/index.html",
+    "precache-manifest.51dfdbbb8586fbe19475036e1231a7cf.js": "/affiliate-react-frontend/precache-manifest.51dfdbbb8586fbe19475036e1231a7cf.js",
+    "service-worker.js": "/affiliate-react-frontend/service-worker.js",
+    "static/css/main.279788f6.chunk.css.map": "/affiliate-react-frontend/static/css/main.279788f6.chunk.css.map",
+    "static/js/2.db82d8fd.chunk.js.LICENSE.txt": "/affiliate-react-frontend/static/js/2.db82d8fd.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/affiliate-react-frontend/static/media/Roboto-Regular.11eabca2.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7796d27f.js",
+    "static/js/2.db82d8fd.chunk.js",
+    "static/css/main.279788f6.chunk.css",
+    "static/js/main.adec27bc.chunk.js"
+  ]
+}
