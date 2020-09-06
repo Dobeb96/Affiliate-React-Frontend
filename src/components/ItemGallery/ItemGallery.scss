@@ -11,7 +11,10 @@
         margin: .8em .4em;
         cursor: pointer;
     }
-    animation: show-up .5s ease-in-out;
+    .active {
+      border-bottom: 4px solid black;
+    }
+    animation: show-up .25s ease-in-out;
 }
 
 .item-gallery-layout {
