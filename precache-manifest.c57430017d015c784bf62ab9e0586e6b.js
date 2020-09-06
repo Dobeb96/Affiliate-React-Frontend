@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f23d71c5a4e1ec4c1ce4765ebd9fcdca",
+    "revision": "c974ee2661692cefbf9ed502fbb6a0a1",
     "url": "/Affiliate-React-Frontend/index.html"
   },
   {
-    "revision": "1533706a712c407eab09",
-    "url": "/Affiliate-React-Frontend/static/css/main.db32c98c.chunk.css"
+    "revision": "f1ae72e7f8d5ea22a8ed",
+    "url": "/Affiliate-React-Frontend/static/css/main.ecc214aa.chunk.css"
   },
   {
-    "revision": "d4120eaeaabc80865178",
-    "url": "/Affiliate-React-Frontend/static/js/2.434b78cc.chunk.js"
+    "revision": "81ed3c7c77f4384516d1",
+    "url": "/Affiliate-React-Frontend/static/js/2.321a05a8.chunk.js"
   },
   {
     "revision": "56314afb9447acda61c0bb273cfa2653",
-    "url": "/Affiliate-React-Frontend/static/js/2.434b78cc.chunk.js.LICENSE.txt"
+    "url": "/Affiliate-React-Frontend/static/js/2.321a05a8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1533706a712c407eab09",
-    "url": "/Affiliate-React-Frontend/static/js/main.a90d8f48.chunk.js"
+    "revision": "f1ae72e7f8d5ea22a8ed",
+    "url": "/Affiliate-React-Frontend/static/js/main.3f0979cf.chunk.js"
   },
   {
     "revision": "6dd9fe96b023dc6d6bdc",
