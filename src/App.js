@@ -64,7 +64,7 @@ class App extends React.Component {
             <ItemGallery key="popular" category="popular" />
           </Route>
           <Route exact path="/kategorie">
-            <ItemGallery key="categories" category="categories" />
+            <ItemGallery key="categories" category="categories" categorical />
           </Route>
           <Route exact path="/ostatnio-przegladane">
             <ItemGallery key="last-viewed" category="last-viewed" />
