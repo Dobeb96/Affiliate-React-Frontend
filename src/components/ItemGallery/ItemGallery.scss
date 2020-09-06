@@ -1,5 +1,19 @@
 @import "../../assets/styles/dobeb_ui_variables";
 
+.categories-selector {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: $font-primary;
+    font-size: $font-size-mid;
+    .category {
+        margin: .8em .4em;
+        cursor: pointer;
+    }
+    animation: show-up .5s ease-in-out;
+}
+
 .item-gallery-layout {
     display: flex;
     flex-wrap: wrap;
