@@ -26,7 +26,8 @@ class ItemGallery extends React.Component {
     }
 
     isLoading() {
-        return this.props.items.isLoading === true || this.isCategoriesLoading()
+        return this.props.items.isLoading === true ||
+          (this.hasCategories() && this.isCategoriesLoading())
     }
 
     hasCategories() {
