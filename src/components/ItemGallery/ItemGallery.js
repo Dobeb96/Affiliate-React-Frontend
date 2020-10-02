@@ -4,6 +4,7 @@ import BounceLoader from "react-spinners/BounceLoader";
 import { connect } from "react-redux";
 import { fetchItems, fetchCategoriesAndItems } from "../../redux/actions";
 import Item from "../Item/Item";
+import InfiniteScroll from 'react-infinite-scroller';
 
 class ItemGallery extends React.Component {
     constructor(props) {
@@ -49,7 +50,7 @@ class ItemGallery extends React.Component {
         if (this.hasCategories() && !this.isCategoriesLoading()) {
             CategoryList = <ul class="categories-selector">
                 {this.props.categories.response.data.map((e, i) =>
-                    <li class={"category " + (this.state.slug === e.slug ? "active" : "")}
+                    <li className={"category " + (this.state.slug === e.slug ? "active" : "")}
                         onClick={() => this.fetchItems(e.slug)}>
                         {e.name}
                     </li>
@@ -73,11 +74,16 @@ class ItemGallery extends React.Component {
                 <BounceLoader color="#fa6266" />
             </div>
         } else {
-            Content = <div className="item-gallery-layout">
+            Content = <InfiniteScroll
+                pageStart={0}
+                loadMore={() => this.props.fetchItems({ category: this.props.category })}
+                hasMore={true}
+                loader={<BounceLoader color="#fa6266" />}
+                className="item-gallery-layout">
                 {this.props.items.response.data.map((e, i) =>
                     <Item key={i} item={e} />
                 )}
-            </div>
+            </InfiniteScroll>
         }
 
         return <>
