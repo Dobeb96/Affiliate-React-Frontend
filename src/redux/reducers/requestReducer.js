@@ -1,6 +1,6 @@
 const initialState = {
     isLoading: true,
-    response: null,
+    response: {data: {items: []}},
     error: null,
 }
 
@@ -9,6 +9,9 @@ const itemsReducer = (state = initialState, action) => {
         case 'ITEMS_REQUEST_STARTED':
             return Object.assign({}, state, { isLoading: true })
         case 'ITEMS_REQUEST_SUCCESS':
+            if (!action.appendItems) { state = initialState }
+            let appendItems = state.response.data.items.concat(action.response.data.items)
+            action.response.data.items = appendItems
             return Object.assign({}, state, { isLoading: false, response: action.response })
         case 'ITEMS_REQUEST_FAILED':
             return Object.assign({}, state, { isLoading: false, error: action.error })

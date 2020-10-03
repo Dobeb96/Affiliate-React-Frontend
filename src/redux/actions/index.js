@@ -4,8 +4,13 @@ export const itemsRequestStarted = () => {
     return { type: 'ITEMS_REQUEST_STARTED' }
 }
 
-export const itemsRequestSuccess = (json) => {
-    return { type: 'ITEMS_REQUEST_SUCCESS', response: json }
+export const itemsRequestSuccess = (json, options) => {
+    return {
+      type: 'ITEMS_REQUEST_SUCCESS',
+      response: json,
+      page: options.page,
+      appendItems: options.appendItems
+    }
 }
 
 export const itemsRequestFailed = (error) => {
@@ -45,7 +50,7 @@ export function fetchItems(options) {
 
         axios
             .get(apiEndpoint)
-            .then( response => dispatch(itemsRequestSuccess(response)) )
+            .then( response => dispatch(itemsRequestSuccess(response, options)) )
     }
 }
 

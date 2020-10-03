@@ -9,7 +9,10 @@ import InfiniteScroll from 'react-infinite-scroller';
 class ItemGallery extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { slug: 'ceiling' }
+        this.state = {
+          items: [],
+          slug: 'ceiling' // default category to be loaded
+        }
     }
 
     componentDidMount() {
@@ -74,22 +77,25 @@ class ItemGallery extends React.Component {
                 <BounceLoader color="#fa6266" />
             </div>
         } else {
+            // https://www.npmjs.com/package/react-infinite-scroller
             Content = <InfiniteScroll
-                pageStart={0}
-                loadMore={() => this.props.fetchItems({ category: this.props.category })}
-                hasMore={true}
-                loader={<BounceLoader color="#fa6266" />}
+                loadMore={() =>this.props.fetchItems({
+                  category: this.props.category,
+                  appendItems: true,
+                  page: Math.max(1, this.props.items.response.data.nextPage) })}
+                hasMore={this.props.items.response.data.hasMore}
+                loader={<div className="spinner-loading"><BounceLoader color="#fa6266" /></div>}
                 className="item-gallery-layout">
-                {this.props.items.response.data.map((e, i) =>
+                {this.props.items.response.data.items.map((e, i) =>
                     <Item key={i} item={e} />
                 )}
             </InfiniteScroll>
         }
 
-        return <>
+        return <div style={{height: "1000px"}}>
             {CategoryList}
             {Content}
-        </>
+        </div>
     }
 }
 
