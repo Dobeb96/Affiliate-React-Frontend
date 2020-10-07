@@ -13,6 +13,7 @@ class ItemGallery extends React.Component {
           items: [],
           slug: 'ceiling' // default category to be loaded
         }
+        this.handleFetchItems = this.handleFetchItems.bind(this)
     }
 
     componentDidMount() {
@@ -63,7 +64,14 @@ class ItemGallery extends React.Component {
         return CategoryList
     }
 
-
+    handleFetchItems() {
+        if (!this.props.items.isLoading) {
+            this.props.fetchItems({
+                category: this.props.category,
+                appendItems: true,
+                page: Math.max(1, this.props.items.response.data.nextPage) })
+        }
+    }
 
     render() {
         let Content, CategoryList;
@@ -72,27 +80,22 @@ class ItemGallery extends React.Component {
             CategoryList = this.renderCategoryList()
         }
 
-        if (this.isLoading()) {
-            Content = <div className="spinner-loading">
-                <BounceLoader color="#fa6266" />
-            </div>
-        } else {
-            // https://www.npmjs.com/package/react-infinite-scroller
-            Content = <InfiniteScroll
-                loadMore={() =>this.props.fetchItems({
-                  category: this.props.category,
-                  appendItems: true,
-                  page: Math.max(1, this.props.items.response.data.nextPage) })}
-                hasMore={this.props.items.response.data.hasMore}
-                loader={<div className="spinner-loading"><BounceLoader color="#fa6266" /></div>}
-                className="item-gallery-layout">
-                {this.props.items.response.data.items.map((e, i) =>
-                    <Item key={i} item={e} />
-                )}
-            </InfiniteScroll>
-        }
+        let items = []
+        this.props.items.response.data.items.map((e) =>
+            items.push(<Item key={e.sku} item={e} />)
+        )
 
-        return <div style={{height: "1000px"}}>
+        // https://www.npmjs.com/package/react-infinite-scroller
+        Content = <InfiniteScroll
+            loadMore={this.handleFetchItems}
+            hasMore={this.props.items.response.data.hasMore}
+            loader={<div key="spinner" className="spinner-loading"><BounceLoader color="#fa6266" /></div>}
+            threshold={800}
+            className="item-gallery-layout">
+            {items}
+        </InfiniteScroll>
+
+        return <div>
             {CategoryList}
             {Content}
         </div>

@@ -1,7 +1,10 @@
 import axios from 'axios';
 
-export const itemsRequestStarted = () => {
-    return { type: 'ITEMS_REQUEST_STARTED' }
+export const itemsRequestStarted = (options) => {
+    return {
+      type: 'ITEMS_REQUEST_STARTED',
+      appendItems: options.appendItems
+    }
 }
 
 export const itemsRequestSuccess = (json, options) => {
@@ -44,7 +47,7 @@ export function fetchCategoriesAndItems(options) {
 
 export function fetchItems(options) {
     return async function (dispatch) {
-        dispatch(itemsRequestStarted())
+        dispatch(itemsRequestStarted(options))
 
         let apiEndpoint = _prepareItemsRequest(options)
 

@@ -7,7 +7,8 @@ const initialState = {
 const itemsReducer = (state = initialState, action) => {
     switch(action.type) {
         case 'ITEMS_REQUEST_STARTED':
-            return Object.assign({}, state, { isLoading: true })
+            if (action.appendItems) { return Object.assign({}, state, { isLoading: true }) }
+            return Object.assign({}, state, { isLoading: true, response: initialState.response })
         case 'ITEMS_REQUEST_SUCCESS':
             if (!action.appendItems) { state = initialState }
             let appendItems = state.response.data.items.concat(action.response.data.items)
