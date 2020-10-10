@@ -26,4 +26,8 @@
 .spinner-loading {
     width: $button-size;
     margin: $button-size auto;
+    flex-basis: 100%;
+    & > div {
+      margin: auto;
+    }
 }
