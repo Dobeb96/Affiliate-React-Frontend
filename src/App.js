@@ -6,6 +6,7 @@ import {
   Link
 } from "react-router-dom";
 import ItemGallery from "./components/ItemGallery/ItemGallery.js"
+import ItemGalleryCategorical from "./components/ItemGallery/ItemGalleryCategorical.js"
 import { Grid } from "@material-ui/core"
 import "./App.scss"
 import IosArrowDown from 'react-ionicons/lib/IosArrowDown'
@@ -64,7 +65,7 @@ class App extends React.Component {
             <ItemGallery key="popular" category="popular" />
           </Route>
           <Route exact path="/kategorie">
-            <ItemGallery key="categories" category="categories" categorical />
+            <ItemGalleryCategorical key="categorical" />
           </Route>
           <Route exact path="/ostatnio-przegladane">
             <ItemGallery key="last-viewed" category="last-viewed" />

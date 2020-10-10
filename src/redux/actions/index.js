@@ -32,7 +32,7 @@ export const categoriesRequestFailed = (error) => {
     return { type: 'CATEGORIES_REQUEST_FAILED', error: error }
 }
 
-export function fetchCategoriesAndItems(options) {
+export function fetchItemCategories() {
     return async function (dispatch) {
         dispatch(categoriesRequestStarted())
 
@@ -41,7 +41,6 @@ export function fetchCategoriesAndItems(options) {
         axios
             .get(apiEndpoint)
             .then( response => dispatch(categoriesRequestSuccess(response)) )
-            .then( () => dispatch(fetchItems({category: 'categories', slug: options.slug})))
     }
 }
 
